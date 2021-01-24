@@ -14,7 +14,26 @@ module.exports = {
         }),
     ],
     module: {
-        rules: [{
+        rules: [
+                {
+                  test: /\.styl$/i,
+                  use: [
+                    "style-loader",
+                    {
+                      loader: "css-loader",
+                      options: {
+                        sourceMap: true,
+                      },
+                    },
+                    {
+                      loader: "stylus-loader",
+                      options: {
+                        sourceMap: true,
+                      },
+                    },
+                  ],
+                },              
+            {
                 test: /\.less$/,
                 use: [{
                         loader: "style-loader",
