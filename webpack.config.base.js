@@ -14,11 +14,24 @@ module.exports = {
         }),
     ],
     module: {
-        rules: [
-            //   {
-            //     test: /\.less$/,
-            //     loader: ["style-loader", "css-loader", "less-loader"]
-            //   },
+        rules: [{
+                test: /\.less$/,
+                use: [{
+                        loader: "style-loader",
+                    },
+                    {
+                        loader: "css-loader",
+                    },
+                    {
+                        loader: "less-loader",
+                        options: {
+                            lessOptions: {
+                                strictMath: true,
+                            },
+                        },
+                    },
+                ],
+            },
             {
                 test: /\.scss$/i,
                 use: [
