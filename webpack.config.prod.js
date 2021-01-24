@@ -8,6 +8,7 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,
         use: [
@@ -30,5 +31,3 @@ module.exports = {
       }),
   ]
 };
-
-   
